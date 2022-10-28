@@ -1,10 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
+import TextBoxBottom from "./components/TextBoxBottom";
+import UploadImage from "./components/UploadImage";
+import TextBoxTop from "./components/TextBoxTop";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="flex">
+      <UploadImage />
+      <TextBoxTop />
+      <TextBoxBottom />
     </div>
   );
 }
