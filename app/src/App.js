@@ -5,7 +5,7 @@ import TextBoxTop from "./components/TextBoxTop";
 
 function App() {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap">
       <UploadImage />
       <TextBoxTop />
       <TextBoxBottom />
