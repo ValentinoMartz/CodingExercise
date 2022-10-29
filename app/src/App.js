@@ -5,10 +5,12 @@ import TextBoxTop from "./components/TextBoxTop";
 
 function App() {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex w-full h-[100vh] flex-wrap">
       <UploadImage />
-      <TextBoxTop />
-      <TextBoxBottom />
+      <div className="w-[45%] h-[35vh] ">
+        <TextBoxTop />
+        <TextBoxBottom />
+      </div>
     </div>
   );
 }
