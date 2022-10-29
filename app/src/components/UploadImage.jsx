@@ -25,7 +25,7 @@ const UploadImage = () => {
 
   //ml-[10%] max-[1000px]:ml-[5vh] max-[1200px]:ml-[10vh]
   return (
-    <div className=" flex items-center justify-between w-[50vh] h-[50vh] border-t border-l border-r  shadow-[#aeacac] shadow-md mt-[25vh] rounded-[2%]">
+    <div className=" flex items-center justify-between w-[50vh] h-[50vh] lg:ml-[10%] border-t border-l border-r  shadow-[#aeacac] shadow-md mt-[25vh] rounded-[2%]">
       {image ? (
         <div
           className="flex items-center mx-auto justify-center max-w-[50vh] rounded-[1rem]"

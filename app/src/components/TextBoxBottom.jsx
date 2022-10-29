@@ -12,7 +12,7 @@ const TextBoxBottom = () => {
     "This is a text area. Populate it with 3 paragraphs ~ 25 words \neach. Ex: \nParagraph one (20 words)\n(line break) \nParagraph two(25 words)\n(line break)\nParagraph three (10 words)";
 
   return (
-    <div className="flex border-b border-l border-r shadow-[#aeacac] text-left shadow-md mt-[5%] lg:mt-[10%]  rounded-[0.5rem]">
+    <div className="flex border-b border-l border-r shadow-[#aeacac] text-left shadow-md mt-[5%] lg:mt-[5%]  rounded-[0.5rem]">
       <div className="w-full ">
         <div className="shadow-md shadow-[#f3fd83] border-b border-[#EBEFF2]">
           <p className=" pl-4 shadow-md text-lg py-2">Text Box</p>
