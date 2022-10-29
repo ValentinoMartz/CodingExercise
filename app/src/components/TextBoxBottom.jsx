@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { text } from "../assets/text";
 
 const TextBoxBottom = () => {
+  //bring the string from localstorage, the first time will be ""
   const [inputBottom, setInputBottom] = useState(
     localStorage.getItem("inputBottom")
   );
 
+  //listen the changes from the input and store them
   useEffect(() => {
     JSON.stringify(localStorage.setItem("inputBottom", inputBottom));
   }, [inputBottom]);
-  let text =
-    "This is a text area. Populate it with 3 paragraphs ~ 25 words \neach. Ex: \nParagraph one (20 words)\n(line break) \nParagraph two(25 words)\n(line break)\nParagraph three (10 words)";
 
   return (
     <div className="flex border-b border-l border-r shadow-[#aeacac] text-left shadow-md mt-[5%] lg:mt-[5%]  rounded-[0.5rem]">

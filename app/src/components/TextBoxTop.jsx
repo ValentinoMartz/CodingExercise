@@ -1,22 +1,16 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-
-//hacer que el texto se acomode
-//sacar la scrollbar
-//fijar la linea azul de abajo
-//hacer que se adapte a todas las pantallas
-//max-[1000px]:ml-[2vh] max-[1200px]:ml-[350vh]
+import { text } from "../assets/text";
 
 const TextBoxTop = () => {
+  //bring the string from localstorage, the first time will be ""
   const [inputTop, setInputTop] = useState(localStorage.getItem("inputTop"));
 
+  //listen the changes from the input and store them
   useEffect(() => {
     JSON.stringify(localStorage.setItem("inputTop", inputTop));
   }, [inputTop]);
-
-  let text =
-    "This is a text area. Populate it with 3 paragraphs ~ 25 words \neach. Ex: \nParagraph one (20 words)\n(line break) \nParagraph two(25 words)\n(line break)\nParagraph three (10 words)";
 
   return (
     <div className="flex mt-[10%] lg:mt-[12%] xl:mt-[5%] border-b border-l border-r shadow-[#aeacac] text-left shadow-md rounded-[0.5rem]">
@@ -41,16 +35,5 @@ const TextBoxTop = () => {
     </div>
   );
 };
-/*
-20
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro enim ullam animi dolore odio numquam! Provident dicta doloremque asperiores
-
-25 
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro enim ullam animi dolore odio numquam! Provident dicta doloremque asperiores tempora laboriosam distinctio facere id 
-
-10
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi enim
-
-*/
 
 export default TextBoxTop;

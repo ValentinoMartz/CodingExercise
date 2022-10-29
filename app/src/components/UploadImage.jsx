@@ -4,6 +4,7 @@ import upload from "../assets/uploadIndicator.png";
 const UploadImage = () => {
   const [image, setImage] = useState(null);
 
+  //takes the file and store it in state and local
   const addImageToState = (e) => {
     e.preventDefault();
     const reader = new FileReader();
@@ -16,16 +17,16 @@ const UploadImage = () => {
     };
   };
 
+  //when component mount checks for img in localstorage
   useEffect(() => {
-    let imfromLocal = localStorage.getItem("image");
-    if (imfromLocal) {
-      setImage(imfromLocal);
+    let imgFromLocal = localStorage.getItem("image");
+    if (imgFromLocal) {
+      setImage(imgFromLocal);
     }
   }, []);
 
-  //ml-[10%] max-[1000px]:ml-[5vh] max-[1200px]:ml-[10vh]
   return (
-    <div className=" flex items-center justify-between w-[50vh] h-[50vh] lg:ml-[10%] border-t border-l border-r  shadow-[#aeacac] shadow-md mt-[25vh] rounded-[2%]">
+    <div className="flex items-center justify-between w-[50vh] h-[50vh] lg:ml-[10%] border-t border-l border-r  shadow-[#aeacac] shadow-md mt-[25vh] rounded-[2%]">
       {image ? (
         <div
           className="flex items-center mx-auto justify-center max-w-[50vh] rounded-[1rem]"
@@ -48,7 +49,8 @@ const UploadImage = () => {
             <img
               src={upload}
               alt="upload"
-              className="w-16 cursor-pointer "
+              className="w-16 cursor-pointer"
+              /* little trick to use the img as input file */
               onClick={() => document.getElementById("file").click()}
             />
             <input type="file" className="hidden" id="file" />
@@ -61,7 +63,5 @@ const UploadImage = () => {
     </div>
   );
 };
-/* hover:shadow-[#aeacac] hover:shadow-md hover:rounded-full */
-/* vh del div de la imagen, revisar luego  */
 
 export default UploadImage;
