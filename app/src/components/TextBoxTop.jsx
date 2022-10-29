@@ -1,34 +1,48 @@
 import React from "react";
-//rounded-[4%]
-//border-b-4 border-l-2 border-r-2 border-[#f3fd83]
-const TextBoxTop = () => {
-  let placeholder = "";
 
-  /*  `This is a text area. Populate it with 3 paragraphs ~ 25 words <br/>
-    each. Ex: <br/>
-    Paragraph one (20 words)<br/>
-    (line break)<br/>
-    Paragraph two (25 words)<br/>
-    (line break)<br/>
-    Paragraph three (10 words)`; */
+//hacer que el texto se acomode
+//sacar la scrollbar
+//fijar la linea azul de abajo
+//hacer que se adapte a todas las pantallas
+//max-[1000px]:ml-[2vh] max-[1200px]:ml-[350vh]
+
+const TextBoxTop = () => {
+  let text =
+    "This is a textarea. Populate it with 3 paragraphs ~ 25 words \neach. Ex: \nParagraph one (20 words)\n(line break) \nParagraph two(25 words)\n(line break)\nParagraph three (10 words)";
 
   return (
-    <div className="flex justify-between w-[85vh] h-[35vh] mt-[12.5vh] ml-[20vh] border-b border-l border-r  shadow-[#aeacac] text-left shadow-md ">
+    <div className="flex w-[50%] h-[35vh] mt-[12.5vh]  border-b border-l border-r  shadow-[#aeacac] text-left shadow-md">
       <div className="w-full">
-        <p className="pl-2 shadow-md shadow-[#f3fd83] border-b border-blue">
-          Text Box
-        </p>
+        <div className="shadow-md shadow-[#f3fd83] border-b border-[#EBEFF2]">
+          <p className=" pl-4 shadow-md ">Text Box</p>
+        </div>
+        <div className="">
+          <textarea
+            type="textarea"
+            name=""
+            id=""
+            wrap="hard"
+            cols="50"
+            placeholder={text}
+            className="w-full h-full outline-0 mt-2 pl-4 resize-none overflow-hidden pb-32 placeholder:text-black "
+          ></textarea>
 
-        <input
-          type="textarea"
-          name=""
-          id=""
-          placeholder={placeholder}
-          className="truncate w-full outline-0 mt-2" //
-        />
+          <div className=" border-t mb-[-20px] border-[#EBEFF2]"></div>
+        </div>
       </div>
     </div>
   );
 };
+/*
+20
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro enim ullam animi dolore odio numquam! Provident dicta doloremque asperiores
+
+25 
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi porro enim ullam animi dolore odio numquam! Provident dicta doloremque asperiores tempora laboriosam distinctio facere id 
+
+10
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi enim
+
+*/
 
 export default TextBoxTop;

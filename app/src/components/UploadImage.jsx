@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useRef } from "react";
+import { useEffect } from "react";
 import upload from "../assets/uploadIndicator.png";
 const UploadImage = () => {
   const [image, setImage] = useState(null);
@@ -8,16 +8,24 @@ const UploadImage = () => {
     e.preventDefault();
     const reader = new FileReader();
     if (e.target.files[0]) {
-      console.log(e.target.files[0]);
       reader.readAsDataURL(e.target.files[0]);
     }
     reader.onload = (readerEvent) => {
       setImage(readerEvent.target.result);
+      localStorage.setItem("image", readerEvent.target.result);
     };
   };
-  //how to fit an image in a div tailwin?
+
+  useEffect(() => {
+    let imfromLocal = localStorage.getItem("image");
+    if (imfromLocal) {
+      setImage(imfromLocal);
+    }
+  }, []);
+
+  //ml-[10%] max-[1000px]:ml-[5vh] max-[1200px]:ml-[10vh]
   return (
-    <div className=" flex items-center justify-between w-[50vh] h-[50vh] border-t border-l border-r  shadow-[#aeacac] shadow-md mt-[25vh] ml-[35vh]  space-x-6 rounded-[2%]">
+    <div className=" flex items-center justify-between w-[50vh] h-[50vh] border-t border-l border-r  shadow-[#aeacac] shadow-md mt-[25vh]  space-x-6 rounded-[2%]">
       {image ? (
         <div
           className="flex items-center mx-auto justify-center max-w-[50vh]"
